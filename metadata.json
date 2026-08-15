@@ -1,0 +1,6 @@
+{
+  "name": "Pulpo",
+  "description": "Private local-first AI work governance dashboard for evidence, budget, permissions, source memory, compression, and receipts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

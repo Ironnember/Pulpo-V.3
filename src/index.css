@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .glow-cyan {
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.35), inset 0 0 10px rgba(6, 182, 212, 0.1);
+  }
+  .glow-emerald {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.35), inset 0 0 10px rgba(16, 185, 129, 0.1);
+  }
+  .glow-amber {
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.35), inset 0 0 10px rgba(245, 158, 11, 0.1);
+  }
+  .glow-crimson {
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.35), inset 0 0 10px rgba(239, 68, 68, 0.1);
+  }
+  .text-glow-cyan {
+    text-shadow: 0 0 8px rgba(6, 182, 212, 0.6);
+  }
+  .text-glow-emerald {
+    text-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+  }
+  .text-glow-amber {
+    text-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+  }
+}
+
+/* Cyber Motherboard Grid & Scanline Effects */
+.cyber-circuit-bg {
+  background-color: #05080E;
+  background-image: 
+    radial-gradient(rgba(6, 182, 212, 0.08) 1px, transparent 0),
+    linear-gradient(to right, rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px, 32px 32px, 32px 32px;
+}
+
+.cyber-card {
+  background: rgba(6, 12, 20, 0.45);
+  backdrop-filter: blur(20px) saturate(200%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35), inset 0 0 1px 1px rgba(6, 182, 212, 0.12);
+  position: relative;
+}
+
+.cyber-card::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 12px;
+  right: 12px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.8), transparent);
+}
+
+.cyber-chip-header {
+  background: linear-gradient(180deg, rgba(14, 26, 38, 0.45) 0%, rgba(8, 15, 23, 0.5) 100%);
+  border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.cyber-pin-left, .cyber-pin-right {
+  position: relative;
+}
+
+.cyber-pin-left::after {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 8px;
+  background: #F59E0B;
+  border-radius: 1px;
+  box-shadow: 0 0 4px #F59E0B;
+}
+
+.cyber-pin-right::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 8px;
+  background: #F59E0B;
+  border-radius: 1px;
+  box-shadow: 0 0 4px #F59E0B;
+}
+
+/* Pulse Electron Flow Keyframe */
+@keyframes pulse-flow {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(200%); opacity: 0; }
+}
+
+.animate-pulse-flow {
+  animation: pulse-flow 2.5s infinite linear;
+}
